@@ -6,17 +6,23 @@
     <h2 class="h2-responsive text-center">Richard Szabo</h2>
     <h3 class="h3-responsive text-center">Front-end Developer</h3>
     <section class="home-socialm-profiles col-12 d-inline-flex justify-content-center align-items-center">
-      <div class="col-6 d-flex justify-content-around align-items-center">
-        <a v-for="logo in logoes" :key="logo.key" :href="logo.html" class="">
+      <div class="col-3 d-flex justify-content-around align-items-center">
+        <a v-for="logo in logoes" :key="logo.key" target="_blank" :href="logo.url" :class="logoes.key">
         <i :class="'d-flex justify-content-center align-items-center rounded-circle hoverable blue lighten-1 fa ' + logo.html" aria-hidden="true"></i>
       </a>
       </div>
     </section>
+    <CardPage />
   </div>
 </template>
 
 <script>
+import CardPage from './CardPage';
+
 export default {
+  components:{
+    CardPage,
+  },
   data() {
     return {
       logoes:  [
@@ -30,8 +36,15 @@ export default {
           html: 'fa-github',
           url: 'https://github.com/Ignocius'
         },
+        {
+          key: 'skype',
+          html: 'fa-skype',
+          url: 'skype:ignocius?chat'
+        },
       ],
     };
+  },
+  methods: {
   },
 };
 </script>
@@ -48,8 +61,9 @@ export default {
 
   .home-background-profile {
     max-height: 250px;
-    height: 25vh;
-    margin-top: -15vh;
+    height: 150px;
+    width: 150px;
+    margin-top: -90px;
     z-index: 2;
   }
 

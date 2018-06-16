@@ -1,7 +1,9 @@
 <template>
-  <card>
-    <card-header>Card Header</card-header>
-    <card-body>Card Body</card-body>
+  <card >
+    <card-header v-if="cardHead"></card-header>
+    <card-body>
+
+    </card-body>
   </card>
 </template>
 
@@ -12,6 +14,15 @@ import cardBody from '@/components/CardBody';
 
 export default {
   name: 'CardPage',
+  props: {
+    cardHead: {
+      type: String,
+      default: (() => '')
+    },
+    cardBody: {
+      type: Object,
+    },
+  },
   components: {
     'Card': card,
     'CardHeader': cardHeader,
