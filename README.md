@@ -1,0 +1,1 @@
+# szabo_richard_cv
