@@ -24,7 +24,7 @@ export default {
         props.className ? props.className : ''
       ),
     };
-    return h(props.tag, dataObj, children);
+    return h(props.tag, Object.assign({}, dataObj), children);
   }
 };
 

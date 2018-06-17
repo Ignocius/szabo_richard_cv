@@ -1,10 +1,25 @@
 <template>
-  <card >
-    <card-header v-if="cardHead"></card-header>
-    <card-body>
-
-    </card-body>
-  </card>
+  <section class="row d-flex justify-content-center">
+    <card v-for="(card, index) in dynamicCards" :key="index" :className="setSizeByType(card.type)">
+      <card-header v-if="card.header"></card-header>
+      <card-body :className="costumizeCardBody">
+        <div class="col-6 d-flex flex-column justify-content-between">
+          <section v-for="(personalInfo, index) in card.personalData" v-if="card.personalData" :key="index" class="d-flex info-section">
+            <div v-for="(info, key) in personalInfo" :key="key" class="d-flex info-container justify-content-between">
+              <span class="blue lighten-1 text-white info">{{toCamelCase(key)}}: </span>
+              <p>{{info}}</p>
+            </div>
+          </section>
+        </div>
+        <aside class="col-6" v-if="card.aboutMe">
+          <h4>Hi! I am Richard Szabo</h4>
+          <p>
+            {{card.aboutMe.aboutMeText}}
+          </p>
+        </aside>
+      </card-body>
+    </card>
+  </section>
 </template>
 
 <script>
@@ -15,13 +30,26 @@ import cardBody from '@/components/CardBody';
 export default {
   name: 'CardPage',
   props: {
-    cardHead: {
-      type: String,
-      default: (() => '')
+    dynamicCards: {
+      type: Array,
+      default: (() => [])
+    }
+  },
+  data() {
+    return {
+      costumizeCardBody:  "d-flex",
+    };
+  },
+  methods: {
+    setSizeByType (type) {
+      return type === 'general' ?  'col-6' : 'col-8' ;
     },
-    cardBody: {
-      type: Object,
+    toCamelCase (string) {
+      return string.substring(0, 1).toUpperCase() + string.substring(1);
     },
+  },
+  mounted () {
+    console.log(this.dynamicCards);
   },
   components: {
     'Card': card,
@@ -33,5 +61,22 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+    .info-section {
+      border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+    }
+    .info-section:last-child {
+      border: transparent
+    }
+    .info-container {
+      width: 100%;
+      padding: 5px 0;
+    }
+    .info-container p {
+      margin: 0;
+      min-width: 50%;
+    }
+    .info-container .info {
+      height: 25px
+    }
 
 </style>
