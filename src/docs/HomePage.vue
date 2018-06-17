@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <aside class="home-background-logo col-12 img-fluid d-flex justify-content-center align-items-center">
-      <img class="home-background-profile mx-auto d-block rounded-circle" src="../assets/mainprofile.jpg">
+      <div class="home-background-profile mx-auto d-block rounded-circle"></div>
     </aside>
     <h2 class="h2-responsive text-center mt-5">Richard Szabo</h2>
     <h3 class="h3-responsive text-center">Front-end Developer</h3>
@@ -145,6 +145,8 @@ export default {
 <style scoped>
 
   .wrapper {
+    height: 100vh;
+    width: 100vw;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f3f3f3+50,ededed+51,ffffff+100;White+Gloss+%232 */
     background: -moz-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(254,255,252,1) 36%, rgba(246,250,251,1) 49%, rgba(234,244,250,1) 69%, rgba(230,242,250,1) 76%); /* ff3.6+ */
     background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(36%, rgba(254,255,252,1)), color-stop(49%, rgba(246,250,251,1)), color-stop(69%, rgba(234,244,250,1)), color-stop(76%, rgba(230,242,250,1))); /* safari4+,chrome */
@@ -158,7 +160,7 @@ export default {
   .home-background-logo {
     background-image: url('../assets/codes-coding-computer-247791.jpg');
     min-height: 100px;
-    height: 15vh;
+    height: 10vh;
     position: relative;
   }
 
@@ -169,6 +171,10 @@ export default {
     position: absolute;
     bottom: 0;
     margin-bottom: -25px;
+    background-image: url("../assets/mainprofile.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
   }
 
   .home-socialm-profiles {
@@ -177,9 +183,10 @@ export default {
 
   .home-socialm-profiles i {
       color: white;
-      height: 50px;
+      height: 2em;
       font-size: 2em;
       text-align: center;
-      width: 45px
-    }
+      width: 2em;
+  }
+
 </style>
