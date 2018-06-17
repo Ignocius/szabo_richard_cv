@@ -1,9 +1,15 @@
 <template>
-  <section class="row d-flex justify-content-center">
+  <section class="row d-flex justify-content-around">
     <card v-for="(card, index) in dynamicCards" :key="index" :className="setSizeByType(card.type)">
-      <card-header v-if="card.header"></card-header>
-      <card-body :className="costumizeCardBody">
-        <div class="col-6 d-flex flex-column justify-content-between">
+      <card-header v-if="card.header" :className="'d-flex justify-content-center align-items-center'">
+        <div class="card-head d-flex justify-content-center align-items-center flex-column"> 
+          <i :class="'z-depth-2 card-head-title d-flex justify-content-center align-items-center rounded-circle blue lighten-1 fa ' + card.header.icon" aria-hidden="true"></i>
+          <h5>{{card.header.title}}</h5>
+        </div>
+      </card-header>
+      <card-body>
+        <section class="d-flex" v-if="card.type !== 'general'">
+          <div class="col-6 d-flex flex-column justify-content-between">
           <section v-for="(personalInfo, index) in card.personalData" v-if="card.personalData" :key="index" class="d-flex info-section">
             <div v-for="(info, key) in personalInfo" :key="key" class="d-flex info-container justify-content-between">
               <span class="blue lighten-1 text-white info">{{toCamelCase(key)}}: </span>
@@ -17,6 +23,15 @@
             {{card.aboutMe.aboutMeText}}
           </p>
         </aside>
+        </section>
+        <section v-if="card.type === 'general'">
+          <div v-for="(skill, index) in card.skillSet" :key="index"> 
+            <p class="skill-title">{{skill.title}}</p>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" :style="`width: ${skill.knowladge}`" :aria-valuenow="skill.knowladge" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </section>
       </card-body>
     </card>
   </section>
@@ -37,12 +52,11 @@ export default {
   },
   data() {
     return {
-      costumizeCardBody:  "d-flex",
     };
   },
   methods: {
     setSizeByType (type) {
-      return type === 'general' ?  'col-6' : 'col-8' ;
+      return type === 'general' ?  'col-6 col-md-5 col-sm-12 mt-5' : 'col-12 col-md-10 col-sm-12 mt-5 mx-auto' ;
     },
     toCamelCase (string) {
       return string.substring(0, 1).toUpperCase() + string.substring(1);
@@ -79,4 +93,20 @@ export default {
       height: 25px
     }
 
+    .card-header {
+      background: transparent
+    }
+
+    .card-head-title {
+      color: white;
+      font-size: 2em;
+      width: 2em;
+      height: 2em;
+      margin-top: -35px;
+    }
+
+    .skill-title {
+      margin: 0;
+      padding: 5px 0;
+    }
 </style>
