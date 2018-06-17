@@ -4,9 +4,10 @@
   "description": "Vue Bootstrap with Material Design",
   "author": "Bartek Malanowski <b.malanowski@mdbootstrap.com>",
   "private": true,
+  "homepage": "https://ignocius.github.io/szabo_richard/",
   "scripts": {
     "dev": "node build/dev-server.js",
-    "start": "npm run dev",
+    "start": "npm run dev", 
     "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src",
     "deploy": "npm run build; push-dir --dir=dist --branch=master --cleanup"
