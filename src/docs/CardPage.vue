@@ -12,7 +12,7 @@
           <div class="col-6 d-flex flex-column justify-content-between">
           <section v-for="(personalInfo, index) in card.personalData" v-if="card.personalData" :key="index" class="d-flex info-section">
             <div v-for="(info, key) in personalInfo" :key="key" class="d-flex info-container justify-content-between">
-              <span class="blue lighten-1 text-white info">{{toCamelCase(key)}}: </span>
+              <span class="info">{{toCamelCase(key)}}: </span>
               <p>{{info}}</p>
             </div>
           </section>
@@ -22,6 +22,11 @@
           <p>
             {{card.aboutMe.aboutMeText}}
           </p>
+          <div v-for="(btn, index) in card.aboutMe.aboutMeFunction" :key="index">
+            <a v-if="!btn.funct" target="_blank" :href="btn.href" class="funct-btn btn btn-rounded waves-effect waves-light">
+              {{btn.title}}
+            </a>
+          </div>
         </aside>
         </section>
         <section v-if="card.type === 'general'">
@@ -90,7 +95,7 @@ export default {
       min-width: 50%;
     }
     .info-container .info {
-      height: 25px
+      height: 25px;
     }
 
     .card-header {
@@ -108,5 +113,9 @@ export default {
     .skill-title {
       margin: 0;
       padding: 5px 0;
+    }
+
+    .funct-btn {
+      background-color: #2196f3 !important;
     }
 </style>

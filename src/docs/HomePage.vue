@@ -65,10 +65,12 @@ export default {
           ],
           aboutMe: {
             aboutMeText: "At my current company I gained solid knowledge in Jquery, HTML, CSS as a front-end developer. I'm working with PHP and NodeJs backed enviroment. I've also worked with Angular, AngularJs, React, currently I'am integrating VueJs applications to our ecosystem. So I've tasted all the main frameworks, but I could manage without them!",
-            aboutMeFunctiopn: [
+            aboutMeFunction: [
               {
-                type: 'button'
-
+                type: 'button',
+                funct: '',
+                title: 'Read More',
+                href: 'https://www.greenfoxacademy.com/post/a-fogtechnikus-aki-19-re-lapot-huzott-es-bejott-neki',
               }
             ]
           }
@@ -156,7 +158,7 @@ export default {
   .home-background-logo {
     background-image: url('../assets/codes-coding-computer-247791.jpg');
     min-height: 100px;
-    height: 35vh;
+    height: 15vh;
     position: relative;
   }
 
@@ -164,7 +166,9 @@ export default {
     max-height: 250px;
     height: 150px;
     width: 150px;
-    margin-top: 180px;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: -25px;
   }
 
   .home-socialm-profiles {
