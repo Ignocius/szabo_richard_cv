@@ -68,6 +68,32 @@ export default {
           }
         },
         {
+          type: 'experience',
+          header: {
+            title: 'Experiences',
+            icon: 'fa-calendar-check-o'
+          },
+          experience: [
+            {
+              date: '2017 - ',
+              work: 'Zip2000 as Front-end Developer'
+            },
+            {
+              date: '2010 - 2016',
+              work: 'Szabo Tamas Dental Laboratory as dental-technician'
+            },
+            {
+              date: '2006 - 2010',
+              work: 'Dr Savanya Norbert Lawyer as Office assistant'
+            },
+            {
+              date: '2006 - 2007',
+              work: 'Martonyi and Kajtar Baker & Mckenzie Law Firm as Office assistant',
+            },
+          ],
+          summarry: 'With many years of work experience in different fields, I was ready for the next stage in my career. I was confident that my skills acquired during the four months of study at Green Fox Academy was enough for my career change, and I was right!',
+        },
+        {
           type: 'general',
           header: {
             title: 'Professional',
@@ -124,33 +150,7 @@ export default {
               knowladge: '80%',
             }, 
           ],
-        },
-        {
-          type: 'experience',
-          header: {
-            title: 'Experiences',
-            icon: 'fa-calendar-check-o'
-          },
-          experience: [
-            {
-              date: '2017 - ',
-              work: 'Zip2000 as Front-end Developer'
-            },
-            {
-              date: '2010 - 2016',
-              work: 'Szabo Tamas Dental Laboratory as dental-technician'
-            },
-            {
-              date: '2006 - 2010',
-              work: 'Dr Savanya Norbert Lawyer as Office assistant'
-            },
-            {
-              date: '2006 - 2007',
-              work: 'Martonyi and Kajtar Baker & Mckenzie Law Firm as Office assistant',
-            },
-          ],
-          summarry: 'With many years of work experience in different fields, I was ready for the next stage in my career. I was confident that my skills acquired during the four months of study at Green Fox Academy was enough for my career change, and I was right!',
-        } 
+        }, 
       ],
     };
   },
