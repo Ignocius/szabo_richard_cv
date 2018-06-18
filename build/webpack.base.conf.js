@@ -48,36 +48,17 @@ module.exports = {
         include: [resolve('src'), resolve('test')]
       },
       {
-        test: /\.css$/,
-        use: [
-          {
-            loader: require.resolve('style-loader'),
-          },
-          {
-            loader: require.resolve('css-loader'),
+        test: /\.scss$/,
+        use: [{
+            loader: "style-loader"
+        }, {
+            loader: "css-loader"
+        }, {
+            loader: "sass-loader",
             options: {
-              importLoaders: 1,
+                includePaths: ["absolute/path/a", "absolute/path/b"]
             }
-          },
-          {
-            loader: require.resolve('postcss-loader'),
-            options: {
-              ident: 'postcss',
-              plugins: () => [
-                require('postcss-flexbugs-fixes'),
-                autoprefixer({
-                  browsers: [
-                    '>1%',
-                    'last 4 versions',
-                    'Firefox ESR',
-                    'not ie < 9',  
-                  ],
-                  flexbox: 'no-2009',
-                }),
-              ],
-            },
-          }, 
-        ]
+        }]
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
