@@ -174,6 +174,7 @@ export default {
     font-size: 1em;
     min-height: 100vh;
     width: 100vw;
+    padding-bottom: 5vh;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f3f3f3+50,ededed+51,ffffff+100;White+Gloss+%232 */
     background: -moz-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(254,255,252,1) 36%, rgba(246,250,251,1) 49%, rgba(234,244,250,1) 69%, rgba(230,242,250,1) 76%); /* ff3.6+ */
     background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(36%, rgba(254,255,252,1)), color-stop(49%, rgba(246,250,251,1)), color-stop(69%, rgba(234,244,250,1)), color-stop(76%, rgba(230,242,250,1))); /* safari4+,chrome */
@@ -187,7 +188,7 @@ export default {
   .home-background-logo {
     background-image: url('../assets/codes-coding-computer-247791.jpg');
     min-height: 100px;
-    height: 10vh;
+    height: 150px;
     position: relative;
   }
 
@@ -197,7 +198,7 @@ export default {
     width: 150px;
     position: absolute;
     bottom: 0;
-    margin-bottom: -25px;
+    margin-bottom: -40px;
     background-image: url("../assets/mainprofile.jpg");
     background-size: cover;
     background-repeat: no-repeat;
