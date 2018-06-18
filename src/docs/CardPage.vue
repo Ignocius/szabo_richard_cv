@@ -8,8 +8,8 @@
         </div>
       </card-header>
       <card-body>
-        <section class="d-flex" v-if="card.type !== 'general'">
-          <div class="col-6 d-flex flex-column justify-content-between">
+        <section class="d-flex flex-wrap" v-if="card.type !== 'general'">
+          <div class="col-12 col-md-6 col-sm-6 d-flex flex-column justify-content-between">
           <section v-for="(personalInfo, index) in card.personalData" v-if="card.personalData" :key="index" class="d-flex info-section">
             <div v-for="(info, key) in personalInfo" :key="key" class="d-flex info-container justify-content-between">
               <span class="info">{{toCamelCase(key)}}: </span>
@@ -17,7 +17,7 @@
             </div>
           </section>
         </div>
-        <aside class="col-6" v-if="card.aboutMe">
+        <aside class="col-12 col-md-6 col-sm-6 mt-sm-2" v-if="card.aboutMe">
           <h4>Hi! I am Richard Szabo</h4>
           <p>
             {{card.aboutMe.aboutMeText}}

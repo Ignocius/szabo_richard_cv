@@ -146,7 +146,7 @@ export default {
   .wrapper {
     font-family: 'Spectral', serif;
     font-size: 1em;
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f3f3f3+50,ededed+51,ffffff+100;White+Gloss+%232 */
     background: -moz-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(254,255,252,1) 36%, rgba(246,250,251,1) 49%, rgba(234,244,250,1) 69%, rgba(230,242,250,1) 76%); /* ff3.6+ */
