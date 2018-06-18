@@ -6,7 +6,7 @@
     <h2 class="h2-responsive text-center mt-5">Richard Szabo</h2>
     <h3 class="h3-responsive text-center">Front-end Developer</h3>
     <section class="home-socialm-profiles col-12 d-inline-flex justify-content-center align-items-center">
-      <div class="col-3 d-flex justify-content-around align-items-center">
+      <div class="col-12 col-sm-12 col-md-4 d-flex justify-content-around align-items-center">
         <a v-for="logo in logoes" :key="logo.key" target="_blank" :href="logo.url" :class="logoes.key">
         <i :class="' d-flex justify-content-center align-items-center rounded-circle hoverable blue lighten-1 fa ' + logo.html" aria-hidden="true"></i>
       </a>
@@ -64,7 +64,7 @@ export default {
             }
           ],
           aboutMe: {
-            aboutMeText: "At my current company I gained solid knowledge in Jquery, HTML, CSS as a front-end developer. I'm working with PHP and NodeJs backed enviroment. I've also worked with Angular, AngularJs, React, currently I'am integrating VueJs applications to our ecosystem. So I've tasted all the main frameworks, but I could manage without them!",
+            aboutMeText: "At my current company I gained solid knowledge in Jquery, HTML, CSS as a front-end developer. I'm working with PHP and NodeJs backed enviroment. I've also worked with Angular, AngularJs, React, currently I'm integrating VueJs applications to our ecosystem. So I've tasted all the main frameworks, but I could manage without them!",
             aboutMeFunction: [
               {
                 type: 'button',
@@ -143,8 +143,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
   .wrapper {
+    font-family: 'Spectral', serif;
+    font-size: 1em;
     height: 100vh;
     width: 100vw;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f3f3f3+50,ededed+51,ffffff+100;White+Gloss+%232 */
@@ -188,5 +189,11 @@ export default {
       text-align: center;
       width: 2em;
   }
+ 
+ @media screen and (max-width: 300px) {
+    .wrapper {
+        font-size: 1.5em;
+    }
+}
 
 </style>

@@ -61,14 +61,11 @@ export default {
   },
   methods: {
     setSizeByType (type) {
-      return type === 'general' ?  'col-6 col-lg-5 col-sm-12 mt-5' : 'col-12 col-lg-10 col-sm-12 mt-5 mx-auto' ;
+      return type === 'general' ?  'col-12 col-lg-5 col-sm-12 mt-5' : 'col-12 col-lg-10 col-sm-12 mt-5 mx-auto' ;
     },
     toCamelCase (string) {
       return string.substring(0, 1).toUpperCase() + string.substring(1);
     },
-  },
-  mounted () {
-    console.log(this.dynamicCards);
   },
   components: {
     'Card': card,
