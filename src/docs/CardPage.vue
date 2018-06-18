@@ -22,7 +22,7 @@
           <p>
             {{card.aboutMe.aboutMeText}}
           </p>
-          <div v-for="(btn, index) in card.aboutMe.aboutMeFunction" :key="index">
+          <div v-for="(btn, index) in card.aboutMe.aboutMeFunction" v-if="aboutMe.aboutMeFunction" :key="index">
             <a v-if="!btn.funct" target="_blank" :href="btn.href" class="funct-btn btn btn-rounded waves-effect waves-light">
               {{btn.title}}
             </a>

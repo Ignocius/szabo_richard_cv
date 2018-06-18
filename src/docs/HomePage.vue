@@ -65,14 +65,6 @@ export default {
           ],
           aboutMe: {
             aboutMeText: "At my current company I gained solid knowledge in Jquery, HTML, CSS as a front-end developer. I'm working with PHP and NodeJs backed enviroment. I've also worked with Angular, AngularJs, React, currently I'm integrating VueJs applications to our ecosystem. So I've tasted all the main frameworks, but I could manage without them!",
-            aboutMeFunction: [
-              {
-                type: 'button',
-                funct: '',
-                title: 'Read More',
-                href: 'https://www.greenfoxacademy.com/post/a-fogtechnikus-aki-19-re-lapot-huzott-es-bejott-neki',
-              }
-            ]
           }
         },
         {
