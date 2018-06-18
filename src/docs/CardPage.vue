@@ -37,6 +37,19 @@
             </div>
           </div>
         </section>
+        <section v-if="card.type === 'experience'" class="col-12 d-flex flex-wrap">
+          <div class="col-md-7">
+            <div v-for="(exp, index) in card.experience" :key="index" class="border-right d-flex justify-content-between"> 
+              <p class="exp-title text-left">{{exp.date}}</p>
+              <p class="exp-title text-right">{{exp.work}} <i class="fa fa-check-square-o check" aria-hidden="true"></i></p>
+            </div>
+          </div>
+          <div class="col-md-4 summarry">
+            <p>
+              {{card.summarry}}
+            </p>
+          </div>
+        </section>
       </card-body>
     </card>
   </section>
@@ -114,5 +127,14 @@ export default {
 
     .funct-btn {
       background-color: #2196f3 !important;
+    }
+
+    .summarry {
+      width: 100%;
+      border-left: 2px solid #007bff;
+    }
+
+    .check::before {
+      color: #007bff
     }
 </style>
